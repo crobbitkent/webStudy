@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+C:\Users\bitcamp\Git\webStudy\.metadata\.plugins\org.eclipse.jdt.core
+3701811561.index
+12605927.index
+2873614797.index

@@ -1,0 +1,10 @@
+INDEX VERSION 1.4+C:\Users\bitcamp\Git\webStudy\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3285426359.index
+2089211495.index
+2500609140.index
+4261892545.index
+2567818934.index
+2873614797.index
+12605927.index
+1033186396.index
+590895945.index
