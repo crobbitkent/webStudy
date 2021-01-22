@@ -9,14 +9,22 @@
 </head>
 <body>
 <%
+	// web server의 socket과 동일하다.
+	// db의 session과 동일하다.
     Connection conn = null;
     
-    try {
+    try {     
+    	// jdbc 오라클 프로토콜...
         String DB_HOST = "jdbc:oracle:thin:@192.168.0.247:1521:XE"; // 아이피, 포트, 서비스(SID) 정보를 수정
         String DB_USER = "dclub"; // 아이디(유저) - 11g 이상시 대소문자 구분 확인
         String DB_PASS = "dclub"; // 패스워 - 11g 이상시 대소문자 구분 확인
         
+        // jar file 클래스 이름이다.
+        // jar file을 로딩할 때 사용한다.
+        // import와 비슷한 역할... 동적으로 runtime에 class를 메모리 영역에 올린다.    
         Class.forName("oracle.jdbc.driver.OracleDriver");
+        
+        // jdbc 오라클 프로토콜을 보낸다.
         conn = DriverManager.getConnection(DB_HOST, DB_USER, DB_PASS);
         
         out.println("연결성공!");
@@ -34,8 +42,9 @@
             out.println("기본 연결확인!");
         
     } finally {
-        if(conn != null)
+        if(conn != null) {
             conn.close();
+        }
     }
 %></body>
 </html>
