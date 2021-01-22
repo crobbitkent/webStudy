@@ -9,14 +9,15 @@
 	
 	StoreDAO dao = StoreDAO.getInstance();
 	dao.registerStore(request, out);
+	
 	dao.updateStore();
 	
-	List<Store> list = StoreDAO.getList();
+	List<Store> list = dao.getList();
 	
 	for(int i = 0; i < list.size(); ++i)
 	{
-		out.print(list.get(i));
-		out.print("\n");
+		out.println(list.get(i));
+		out.print("<br/>");
 	}
 
 %>

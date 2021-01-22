@@ -5,7 +5,7 @@ public class MainDao {
 		StoreDAO dao = StoreDAO.getInstance();
 		
 		try {
-			StoreDAO.updateStore();
+			dao.updateStore();
 		}
 		catch(Exception e) {
 			e.printStackTrace();
