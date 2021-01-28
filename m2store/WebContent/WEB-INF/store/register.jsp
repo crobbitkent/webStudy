@@ -9,28 +9,28 @@
   <div class="form-group">
     <label class="control-label col-sm-2" for="name">Store Name:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="name" name="name" placeholder="맛집 이름">
+      <input type="text" class="form-control" name="name" placeholder="맛집 이름">
     </div>
   </div>
   
   <div class="form-group">
     <label class="control-label col-sm-2" for="lat">LAT:</label>
     <div class="col-sm-10">
-      <input type="number" step=".0123456789" class="form-control" id="lat" name="lat" placeholder="위도">
+      <input type="number" step=".012345" class="form-control" name="lat" placeholder="위도">
     </div>
   </div>
   
     <div class="form-group">
     <label class="control-label col-sm-2" for="lng">LNG:</label>
     <div class="col-sm-10">
-      <input type="number" step=".0123456789" class="form-control" id="lng" name="lng" placeholder="경도">
+      <input type="number" step=".012345" class="form-control" name="lng" placeholder="경도">
     </div>
   </div>
   
    <div class="form-group">
     <label class="control-label col-sm-2" for="menu">Menu:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="menu" name="menu" placeholder="메뉴">
+      <input type="text" class="form-control" name="menu" placeholder="메뉴">
     </div>
   </div>
 

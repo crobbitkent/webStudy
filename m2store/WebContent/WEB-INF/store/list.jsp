@@ -14,7 +14,7 @@
       <th scope="col">NAME</th>
       <th scope="col">LAT</th>
       <th scope="col">LNG</th>
-      <th scope="col">Menu</th>
+      <th scope="col">MENU</th>
       <th scope="col">REG DATE</th>
       <th scope="col">UPDATE DATE</th>
     </tr>

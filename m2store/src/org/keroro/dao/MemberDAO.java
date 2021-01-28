@@ -7,28 +7,25 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.keroro.common.DriverInfo;
 import org.keroro.domain.Member;
 import org.keroro.domain.Store;
 
 public class MemberDAO {
-	
-	private static final String driverName = "oracle.jdbc.driver.OracleDriver";
-	private static final String jdbcURL = "jdbc:oracle:thin:@112.169.196.210:1521:XE";
-	private static final String userName = "mingyu";
-	private static final String userPW = "alsrb";
+
 	
 	public int insert(Member member) throws Exception {
 		
 		String sql = "insert into TBL_MEMBER(mid, mpw, mname) VALUES (?,?,?)";
 		
-		Class.forName(driverName);
+		Class.forName(DriverInfo.driverName);
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		
 		try {
 			
-			con = DriverManager.getConnection(jdbcURL, userName, userPW);
+			con = DriverManager.getConnection(DriverInfo.jdbcURL, DriverInfo.userName, DriverInfo.userPW);
 			pstmt = con.prepareStatement(sql);
 			
 			pstmt.setString(1, member.getMid());
@@ -58,11 +55,11 @@ public class MemberDAO {
 		// 1. sql문
 		String sql = "update tbl_member set mpw = ?, mname = ?, updatedate = sysdate where mid = ?";
 		
-		Class.forName(driverName);
+		Class.forName(DriverInfo.driverName);
 
 		// 2. connection
 		// 3. preparedStatement
-		try (Connection conn = DriverManager.getConnection(jdbcURL, userName, userPW);
+		try (Connection conn = DriverManager.getConnection(DriverInfo.jdbcURL, DriverInfo.userName, DriverInfo.userPW);
 				PreparedStatement pstmt = conn.prepareStatement(sql);) {
 			pstmt.setString(1, member.getPw());
 			pstmt.setString(2, member.getName());
@@ -87,11 +84,11 @@ public class MemberDAO {
 		// 1. sql문
 		String sql = "delete tbl_member where mid=? and mpw=?";
 		
-		Class.forName(driverName);
+		Class.forName(DriverInfo.driverName);
 
 		// 2. connection
 		// 3. preparedStatement
-		try (Connection conn = DriverManager.getConnection(jdbcURL, userName, userPW);
+		try (Connection conn = DriverManager.getConnection(DriverInfo.jdbcURL, DriverInfo.userName, DriverInfo.userPW);
 				PreparedStatement pstmt = conn.prepareStatement(sql);) {
 			pstmt.setString(1, member.getMid());
 			pstmt.setString(2, member.getPw());
@@ -109,7 +106,7 @@ public class MemberDAO {
 		
 		String sql = "select * from TBL_MEMBER order by mid";
 		
-		Class.forName(driverName);
+		Class.forName(DriverInfo.driverName);
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -119,7 +116,7 @@ public class MemberDAO {
 		
 		try {
 			
-			con = DriverManager.getConnection(jdbcURL, userName, userPW);
+			con = DriverManager.getConnection(DriverInfo.jdbcURL, DriverInfo.userName, DriverInfo.userPW);
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			
@@ -158,7 +155,7 @@ public class MemberDAO {
 		// 3. PreparedStatement
 		// 3-1. ResultSet
 
-		Class.forName(driverName);
+		Class.forName(DriverInfo.driverName);
 
 		Member result = new Member();
 
@@ -168,7 +165,7 @@ public class MemberDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try {
-			conn = DriverManager.getConnection(jdbcURL, userName, userPW);
+			conn = DriverManager.getConnection(DriverInfo.jdbcURL, DriverInfo.userName, DriverInfo.userPW);
 			pstmt = conn.prepareStatement(query);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
@@ -197,7 +194,7 @@ public class MemberDAO {
 			}
 			if (pstmt != null) {
 				try {
-					rs.close();
+					pstmt.close();
 				} catch (Exception e) {
 				}
 			}

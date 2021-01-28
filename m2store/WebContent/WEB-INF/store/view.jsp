@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
 
 <%@ include file="../includes/header.jsp" %>
@@ -55,6 +56,50 @@
       <button type="submit" class="btn btn-primary">Back To List</button>
     </div>
   </div>
+    <!-- <button><a href='/store/list.jsp'>목록</a></button>  -->
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button class="btn btn-warning"><a href='/review/register?sno=${store.storeCode}'>리뷰 등록</a></button>
+    </div>
+  </div>
+    
+    <!-- review table -->
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">RNO</th>
+      <th scope="col">STORE NAME</th>
+      <th scope="col">ID</th>
+      <th scope="col">TEXT</th>
+      <th scope="col">SCORE</th>
+      <th scope="col">REG DATE</th>
+      <th scope="col">UPDATE DATE</th>
+    </tr>
+  </thead>
+<tbody>
+
+<!-- loop start -->
+	<c:forEach items="${reviewList}" var="review">
+
+
+    <tr>
+      <td>${review.rno}</td>
+      <td>${review.storeName}</td>
+      <td>${review.mid}</td>
+      <td>${review.text}</td>
+      <td>${review.score}</td>
+      <td>${review.reviewdate}</td>
+      <td>${review.updatedate}</td>
+    </tr>   
+
+	
+	</c:forEach>
+<!-- loop end -->
+
+	</tbody>
+</table>  
+    
+    
     
     
     	<!-- Page Footer -->

@@ -14,15 +14,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.jsp.JspWriter;
 
 import org.keroro.common.DebugManager;
+import org.keroro.common.DriverInfo;
 import org.keroro.domain.Store;
 
 // dao에서 입출력하지 마라.
 // jsp에서 request 가져 오지 마라.
 public class StoreDAO {
-	private static String driverName = "oracle.jdbc.driver.OracleDriver";
-	private static String jdbcURL = "jdbc:oracle:thin:@112.169.196.210:1521:XE";
-	private static String userName = "mingyu";
-	private static String userPW = "alsrb";
 
 	static private StoreDAO dao;
 	static private List<Store> storeList;
@@ -49,11 +46,11 @@ public class StoreDAO {
 		// 1. sql문
 		String query = "insert into tbl_store (sno, name, lat, lng, menu) " + "values(seq_store.nextval, ?,?,?,?)";
 
-		Class.forName(driverName);
+		Class.forName(DriverInfo.driverName);
 		
 		// 2. connection
 		// 3. preparedStatement
-		try (Connection conn = DriverManager.getConnection(jdbcURL, userName, userPW);
+		try (Connection conn = DriverManager.getConnection(DriverInfo.jdbcURL, DriverInfo.userName, DriverInfo.userPW);
 				PreparedStatement pstmt = conn.prepareStatement(query);) {
 			pstmt.setString(1, store.getName());
 			pstmt.setDouble(2, store.getLat());
@@ -78,18 +75,14 @@ public class StoreDAO {
 		// 2. Connection
 		// 3. PreparedStatement
 		// 3-1. ResultSet
-		String driverName = "oracle.jdbc.driver.OracleDriver";
-		String jdbcURL = "jdbc:oracle:thin:@112.169.196.210:1521:XE";
-		String userName = "mingyu";
-		String userPW = "alsrb";
 
-		Class.forName(driverName);
+		Class.forName(DriverInfo.driverName);
 
 		List<Store> list = new ArrayList<>();
 
 		// 시간 재보자
 		long beforeTime = System.currentTimeMillis();
-		try (Connection conn = DriverManager.getConnection(jdbcURL, userName, userPW);
+		try (Connection conn = DriverManager.getConnection(DriverInfo.jdbcURL, DriverInfo.userName, DriverInfo.userPW);
 				PreparedStatement pstmt = conn.prepareStatement(query);
 				ResultSet rs = pstmt.executeQuery();) {
 
@@ -122,16 +115,11 @@ public class StoreDAO {
 	public static void updateStore() throws Exception {
 		storeList = new ArrayList<Store>();
 
-		String driverName = "oracle.jdbc.driver.OracleDriver";
-		String jdbcURL = "jdbc:oracle:thin:@112.169.196.210:1521:XE";
-		String userName = "mingyu";
-		String userPW = "alsrb";
-
 		String query = "select * from tbl_store";
 
-		Class.forName(driverName);
+		Class.forName(DriverInfo.driverName);
 		
-		try (Connection conn = DriverManager.getConnection(jdbcURL, userName, userPW);
+		try (Connection conn = DriverManager.getConnection(DriverInfo.jdbcURL, DriverInfo.userName, DriverInfo.userPW);
 				PreparedStatement pstmt = conn.prepareStatement(query);
 				ResultSet rs = pstmt.executeQuery();) {
 
@@ -174,10 +162,6 @@ public class StoreDAO {
 		System.out.println("1 : " + request.getRemoteAddr());
 
 		// =============================== JDBC ===============================//
-		String driverName = "oracle.jdbc.driver.OracleDriver";
-		String jdbcURL = "jdbc:oracle:thin:@112.169.196.210:1521:XE";
-		String userName = "mingyu";
-		String userPW = "alsrb";
 
 		String result = null;
 
@@ -185,9 +169,9 @@ public class StoreDAO {
 		// Statement stmt = null;
 		// ResultSet rs = null; // select 만 result set이 발생한다...
 
-		Class.forName(driverName);
+		Class.forName(DriverInfo.driverName);
 
-		try (Connection conn = DriverManager.getConnection(jdbcURL, userName, userPW);
+		try (Connection conn = DriverManager.getConnection(DriverInfo.jdbcURL, DriverInfo.userName, DriverInfo.userPW);
 				PreparedStatement pstmt = conn.prepareStatement(insertQuery);) {
 			System.out.println("jdbc connection completed. : " + conn);
 			pstmt.setString(1, name);
@@ -213,12 +197,8 @@ public class StoreDAO {
 		// 2. Connection
 		// 3. PreparedStatement
 		// 3-1. ResultSet
-		String driverName = "oracle.jdbc.driver.OracleDriver";
-		String jdbcURL = "jdbc:oracle:thin:@112.169.196.210:1521:XE";
-		String userName = "mingyu";
-		String userPW = "alsrb";
 
-		Class.forName(driverName);
+		Class.forName(DriverInfo.driverName);
 
 		Store result = new Store();
 
@@ -229,7 +209,7 @@ public class StoreDAO {
 		ResultSet rs = null;
 		
 		try {
-			conn = DriverManager.getConnection(jdbcURL, userName, userPW);
+			conn = DriverManager.getConnection(DriverInfo.jdbcURL, DriverInfo.userName, DriverInfo.userPW);
 			pstmt = conn.prepareStatement(query);
 			pstmt.setLong(1, sno);
 			rs = pstmt.executeQuery();
@@ -287,7 +267,7 @@ public class StoreDAO {
 
 		// 2. connection
 		// 3. preparedStatement
-		try (Connection conn = DriverManager.getConnection(jdbcURL, userName, userPW);
+		try (Connection conn = DriverManager.getConnection(DriverInfo.jdbcURL, DriverInfo.userName, DriverInfo.userPW);
 				PreparedStatement pstmt = conn.prepareStatement(query);) {
 			pstmt.setLong(1, sno);
 
@@ -310,14 +290,16 @@ public class StoreDAO {
 
 		// url을 이동시켜 더이상 f5를 쓰지 못하게 막는다!!!
 
+		Class.forName(DriverInfo.driverName);
+		
 		// 1. sql문
 		String sql = "update tbl_store set name = ?, lat = ?, lng = ?, menu = ?, updatedate = sysdate where sno = ?";
 
-		Class.forName(driverName);
+		Class.forName(DriverInfo.driverName);
 		
 		// 2. connection
 		// 3. preparedStatement
-		try (Connection conn = DriverManager.getConnection(jdbcURL, userName, userPW);
+		try (Connection conn = DriverManager.getConnection(DriverInfo.jdbcURL, DriverInfo.userName, DriverInfo.userPW);
 			PreparedStatement pstmt = conn.prepareStatement(sql);) {
 			pstmt.setLong(1, sno);
 
