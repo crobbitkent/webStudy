@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
+        <property name="url" value="jdbc:oracle:thin:@112.169.196.210:1521:XE"/>
+        <property name="username" value="mingyu"/>
+        <property name="password" value="alsrb"/>
+      </dataSource>
+    </environment>
+  </environments>
+  
+  <mappers>
+    <mapper resource="org/kent/dao/mapper/TimeMapper.xml"/>
+    <mapper resource="org/kent/dao/mapper/StoreMapper.xml"/>
+    <mapper resource="org/kent/dao/mapper/MemberMapper.xml"/>
+  </mappers>
+
+</configuration>

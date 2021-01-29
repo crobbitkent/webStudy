@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="review.dao.ReviewMapper">
+
+  <select id="getAll" resultType="review.dto.ReviewDTO">
+		select review.rno, store.name, review.mid, review.text, review.score, review.REVIEWDATE, review.UPDATEDATE from (select sno, name from TBL_STORE where sno = #{sno}) store, (select * from TBL_REVIEW where sno = #{sno}) review
+  </select>
+  
+  
+</mapper>

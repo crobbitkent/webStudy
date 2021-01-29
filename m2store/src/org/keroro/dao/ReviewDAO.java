@@ -49,9 +49,11 @@ public class ReviewDAO {
 	
 	public List<ReviewDTO> selectAll(Long sno) throws Exception {
 		// 1. sql문
-		String query = "select R.rno, S.name, R.mid, R.text, R.score, R.REVIEWDATE, R.UPDATEDATE from tbl_store S, tbl_review R "
-				+ "where S.sno = R.sno and S.sno = ? order by R.rno DESC";
+		//String query = "select R.rno, S.name, R.mid, R.text, R.score, R.REVIEWDATE, R.UPDATEDATE from tbl_store S, tbl_review R "
+		//		+ "where S.sno = R.sno and S.sno = ? order by R.rno DESC";
 
+		String query = "select * from (select sno from TBL_STORE where sno = ?) store, (select * from TBL_REVIEW where sno = ?) review";
+		
 		// 2. Connection
 		// 3. PreparedStatement
 		// 3-1. ResultSet
@@ -71,6 +73,7 @@ public class ReviewDAO {
 			conn = DriverManager.getConnection(DriverInfo.jdbcURL, DriverInfo.userName, DriverInfo.userPW);
 			pstmt = conn.prepareStatement(query);
 			pstmt.setLong(1, sno);
+			pstmt.setLong(2, sno);
 			rs = pstmt.executeQuery();
 			
 			while (rs.next()) {
