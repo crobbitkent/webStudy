@@ -24,7 +24,7 @@ public class StoreDAOTests {
 	public void testGetAll() {	
 		try (SqlSession session = MyBatisMaker.INSTANCE.getFactory().openSession()) {	  
 			List<Store> list = storeDAO.getAll();			
-			list.forEach(o -> System.out.println(o));			
+			// list.forEach(o -> System.out.println(o));			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}		
@@ -33,10 +33,27 @@ public class StoreDAOTests {
 	@Test
 	public void testGetOne() {	
 		try (SqlSession session = MyBatisMaker.INSTANCE.getFactory().openSession()) {
-			Store store = storeDAO.getOne(10L);			
-			System.out.println(store);		
+			Store store = storeDAO.getOne(10L);				
 		} catch(Exception e) {
 			e.printStackTrace();
 		}		
+	}
+	
+	@Test
+	public void testInsert() {				
+		Store store = Store.builder().name("testName").lat(37).lng(123).menu("testMenu").build();		
+		storeDAO.insert(store);		
+	}
+	
+	@Test
+	public void testDelete() {			
+		Long sno = 43L;			
+		storeDAO.delete(sno);	
+	}
+	
+	@Test
+	public void testUpdate() {			
+		Store store = Store.builder().name("testName2").lat(37).lng(123).menu("testMenu2").sno(43L).build();			
+		storeDAO.update(store);	
 	}
 }

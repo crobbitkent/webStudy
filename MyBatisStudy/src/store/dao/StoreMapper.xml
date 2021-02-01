@@ -4,12 +4,31 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="store.dao.StoreMapper">
 
-  <select id="getAll" resultType="store.domain.Store">
+  <select id="getAll" resultType="Store">
     SELECT sno, name, lat, lng, menu, regdate, updatedate FROM TBL_STORE ORDER BY sno DESC
   </select>
  
-  <select id="getOne" resultType="store.domain.Store">
+  <select id="getOne" resultType="Store">
     SELECT sno, name, lat, lng, menu, regdate, updatedate FROM TBL_STORE WHERE sno = #{sno}
   </select>
+  
+  <insert id="insert" parameterType="Store">
+  	INSERT INTO tbl_store (sno, name, lat, lng, menu) values (seq_store.nextval, #{name}, #{lat}, #{lng}, #{menu})
+  </insert>
+  
+  <delete id="delete">
+	DELETE tbl_store where sno = #{sno}
+  </delete>
+  
+  <delete id="deleteReview">
+  	DELETE tbl_review where sno = #{sno}
+  </delete>
+  
+  <update id="update">
+  	UPDATE tbl_store set name = #{name}, lat = #{lat}, lng = #{lng}, menu = #{menu}, updatedate = sysdate
+  	where sno = #{sno} 
+  </update>
+  
+  
   
 </mapper>
