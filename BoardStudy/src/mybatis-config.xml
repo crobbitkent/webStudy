@@ -9,7 +9,7 @@
 	</settings>
 
 	<typeAliases>
-		
+		<typeAlias type="org.kent.board.domain.Board" alias="Board"/>
 	</typeAliases>
 
   <environments default="development">
@@ -28,6 +28,7 @@
   
   <mappers>
 	<mapper resource="org/kent/time/dao/TimeMapper.xml"/>
+	<mapper resource="org/kent/board/dao/BoardMapper.xml"/>
   </mappers>
 
 </configuration>

@@ -47,11 +47,13 @@
     <fullyQualifiedTypeName name="org.kent.common.dao.MyBatisMaker"/>
     <fullyQualifiedTypeName name="lombok.Getter"/>
     <fullyQualifiedTypeName name="java.sql.Date"/>
-    <fullyQualifiedTypeName name="org.junit.Before"/>
-    <fullyQualifiedTypeName name="org.junit.Test"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="org.kent.common.controller.MultiController"/>
     <fullyQualifiedTypeName name="org.kent.board.dao.BoardDAO"/>
-    <fullyQualifiedTypeName name="org.kent.board.domain.Board"/>
+    <fullyQualifiedTypeName name="lombok.Builder.Default"/>
     <fullyQualifiedTypeName name="lombok.extern.log4j.Log4j"/>
+    <fullyQualifiedTypeName name="org.junit.Before"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="org.kent.board.domain.Board"/>
+    <fullyQualifiedTypeName name="org.junit.Test"/>
+    <fullyQualifiedTypeName name="org.kent.board.domain.PageInfo"/>
 </qualifiedTypeNameHistroy>

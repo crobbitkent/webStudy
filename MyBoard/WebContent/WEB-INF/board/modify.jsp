@@ -40,10 +40,11 @@
    
 </form>
 
-<form class="form-horizontal" action="/board/delete" method="post" name="bno2" value=${board.bno}>
+<form class="form-horizontal" action="/board/delete" method="get" >
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-    	<button type="submit" class="btn btn-danger">삭제</button>
+    	<button type="submit" class="btn btn-danger" name="bno2" value="${board.bno}">삭제</button>
+  </div>
   </div>
 </form>
   

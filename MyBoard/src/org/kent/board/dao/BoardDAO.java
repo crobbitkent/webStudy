@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.kent.board.domain.Board;
+import org.kent.board.domain.PageInfo;
 import org.kent.common.dao.MyBatisMaker;
 import org.kent.time.dao.TimeDAO;
 
@@ -98,6 +99,21 @@ public class BoardDAO {
 		} finally {
 			close(session);
 		}
+	}
+	
+	public List<Board> getList(PageInfo pageInfo) throws Exception{
+		SqlSession session = MyBatisMaker.INSTANCE.getFactory().openSession();
+		
+		try {
+			return session.selectList(NAMESPACE + ".getList", pageInfo);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(session != null) { try { session.close(); } catch(Exception e) { } }
+		}
+		
+		return null;
 	}
 
 }

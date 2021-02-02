@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.kent.board.dao.BoardDAO;
 import org.kent.board.domain.Board;
+import org.kent.board.domain.PageInfo;
 import org.kent.common.controller.MultiController;
 
 import lombok.extern.log4j.Log4j;
@@ -39,7 +40,14 @@ public class BoardController extends MultiController {
 		log.info("board listGET"); // log.debug();	
 
 		try {
-			List<Board> boards = boardDAO.getAll();
+			int page = getInt(request, 1, "page");
+			int perSheet = getInt(request, 10, "perSheet");
+			
+			PageInfo info = new PageInfo();	
+			info.setPage(page);
+			info.setPerSheet(perSheet);
+			
+			List<Board> boards = boardDAO.getList(info);
 
 			log.info("boardDAO.getAll()");
 			// 이거 들고 가라
@@ -154,7 +162,7 @@ public class BoardController extends MultiController {
 		log.info("board deleteGET");
 		
 		try {
-			String bnoString = request.getParameter("bno");
+			String bnoString = request.getParameter("bno2");
 			log.info(bnoString);
 			if(null == bnoString) {
 				return "re:/board/list";

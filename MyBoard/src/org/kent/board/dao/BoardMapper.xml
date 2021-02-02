@@ -35,4 +35,17 @@
 	]]>
   </delete>
   
+  <select id="getList" resultType="Board">
+ 	<![CDATA[
+	SELECT /*+ordered use_nl(temp tbl_board)*/ * FROM
+	(
+    SELECT ROWNUM RN, RD FROM
+        	(
+           	SELECT ROWID RD FROM TBL_BOARD
+                ORDER BY bno
+            ) T WHERE ROWNUM <= #{perSheet} * #{page}
+    	) temp, tbl_board
+	WHERE RN > #{perSheet} * (#{page} - 1) AND temp.RD = tbl_board.ROWID
+	]]>
+  </select>
 </mapper>

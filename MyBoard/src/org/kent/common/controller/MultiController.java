@@ -39,6 +39,18 @@ public class MultiController extends HttpServlet {
         
     }
 
+    protected int getInt(HttpServletRequest request, int defaultValue, String name) {
+    	String str = request.getParameter(name);
+    	
+    	if(null == str || 0 == str.trim().length()) {
+    		log.info("value in " + name + " is null. defaultValue is returned.");
+    		return defaultValue;
+    	}
+    	
+    	return Integer.parseInt(str);
+    }
+    
+    
 	/**
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */

@@ -10,7 +10,7 @@
 
 	<typeAliases>
 
-		<typeAlias type="org.kent.board.domain.Board" alias="Board" />
+		<typeAlias type="org.kent.board.domain.Board" alias="Board"/>
 
 	</typeAliases>
 
