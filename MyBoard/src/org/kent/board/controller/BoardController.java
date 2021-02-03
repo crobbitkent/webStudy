@@ -12,8 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.kent.board.dao.BoardDAO;
 import org.kent.board.domain.Board;
-import org.kent.board.domain.PageInfo;
 import org.kent.common.controller.MultiController;
+import org.kent.common.util.PageInfo;
+import org.kent.common.util.PageMaker;
 
 import lombok.extern.log4j.Log4j;
 
@@ -27,6 +28,8 @@ public class BoardController extends MultiController {
 	private static final long serialVersionUID = 1L;
     
 	private BoardDAO boardDAO;
+	
+	
     /**
      * @see MultiController#MultiController()
      */
@@ -42,16 +45,20 @@ public class BoardController extends MultiController {
 		try {
 			int page = getInt(request, 1, "page");
 			int perSheet = getInt(request, 10, "perSheet");
+			// test total			
 			
 			PageInfo info = new PageInfo();	
 			info.setPage(page);
 			info.setPerSheet(perSheet);
+			
+			PageMaker pageMaker = new PageMaker(info, boardDAO.getTotal());
 			
 			List<Board> boards = boardDAO.getList(info);
 
 			log.info("boardDAO.getAll()");
 			// 이거 들고 가라
 			request.setAttribute("boards", boards);
+			request.setAttribute("pageMaker", pageMaker);
 		} catch(Exception e) {
 			e.printStackTrace();
 			return "re:/error/";
@@ -63,14 +70,20 @@ public class BoardController extends MultiController {
 	public String viewGET(HttpServletRequest request, HttpServletResponse response) {
 		log.info("board viewGET");
 		try {
-			Long bno = Long.parseLong(request.getParameter("bno"));
+			Long bno = getLong(request, 1L, "bno");
+			int page = getInt(request, 1, "page");
+			
+			log.info("page number : " + page);
+			log.info("bno : " + bno);
+			
 			Board board = boardDAO.getOne(bno);
 			
 			log.info("boardDAO.getOne()");
-			log.info(bno);
+	
 			
 			request.setAttribute("board", board);
 			request.setAttribute("bno", bno);
+			request.setAttribute("page", page);
 			
 			
 		} catch (Exception e) {

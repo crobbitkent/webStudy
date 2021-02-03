@@ -1,15 +1,4 @@
-INDEX VERSION 1.4+C:\Users\bitcamp\Git\webStudy\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-1654467137.index
-590895945.index
-4245495049.index
-724651582.index
-1086075964.index
-3285426359.index
-2089211495.index
+INDEX VERSION 1.4+C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2358463341.index
+1616060254.index
 837779982.index
-2873614797.index
-1033186396.index
-368641244.index
-4261892545.index
-1018099321.index
-3815146563.index

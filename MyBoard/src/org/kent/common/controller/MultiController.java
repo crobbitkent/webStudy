@@ -50,6 +50,17 @@ public class MultiController extends HttpServlet {
     	return Integer.parseInt(str);
     }
     
+    protected Long getLong(HttpServletRequest request, Long defaultValue, String name) {
+    	String str = request.getParameter(name);
+    	
+    	if(null == str || 0 == str.trim().length()) {
+    		log.info("value in " + name + " is null. defaultValue is returned.");
+    		return defaultValue;
+    	}
+    	
+    	return Long.parseLong(str);
+    }
+    
     
 	/**
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)

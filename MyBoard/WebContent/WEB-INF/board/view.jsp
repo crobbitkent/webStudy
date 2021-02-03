@@ -31,18 +31,19 @@
 </form>
                    
 <form class="form-horizontal" action="/board/modify" method="get">
-        <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-    	<input type='hidden' name='bno' value='${bno}'>
-      <button type="submit" class="btn btn-warning">수정/삭제</button>
-    </div>
-  </div>
+      <div class="form-group">
+    	 <div class="col-sm-offset-2 col-sm-10">
+    		<input type='hidden' name='bno' value='${bno}'>
+      		<button type="submit" class="btn btn-warning">수정/삭제</button>
+    	 </div>
+  	 </div>
 </form>
   
     
 <form class="form-horizontal" action="/board/list" method="get">
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
+      <input type='hidden' name='page' value='${page}'>
       <button type="submit" class="btn btn-primary">게시판 목록으로 돌아가기</button>
     </div>
   </div>

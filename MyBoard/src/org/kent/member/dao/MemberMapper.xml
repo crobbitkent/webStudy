@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.kent.member.dao.MemberMapper">
+
+<insert id="insert">
+	<![CDATA[
+	INSERT INTO tbl_member(mid, mpw, mname)
+	values (#{mid}, #{mpw}, #{mname})
+		]]>
+</insert>
+
+  <select id="getTotal" resultType="int">
+ 	<![CDATA[
+ 		select count(mid) from tbl_member
+	]]>
+  </select>
+
+  <select id="getAll" resultType="Member">
+ 	<![CDATA[
+    	SELECT * FROM tbl_member ORDER BY mid
+	]]>
+  </select>
+  
+  <select id="getOne" resultType="Member">
+ 	<![CDATA[
+    	SELECT * FROM tbl_board WHERE bno = #{bno}
+	]]>
+  </select>
+  
+  <update id="update" parameterType="Member">
+ 	<![CDATA[
+    	UPDATE tbl_board set title = #{title}, content = #{content}, updatedate = sysdate WHERE bno = #{bno}
+	]]>
+  </update>
+  
+  <delete id="delete">
+ 	<![CDATA[
+    	DELETE FROM tbl_board WHERE bno = #{bno}
+	]]>
+  </delete>
+  
+  <select id="getList" resultType="Member">
+ 	<![CDATA[
+	SELECT /*+ordered use_nl(temp tbl_member)*/ * FROM
+	(
+    SELECT ROWNUM RN, RD FROM
+        	(
+           	SELECT ROWID RD FROM tbl_member
+                ORDER BY mid
+            ) T WHERE ROWNUM <= #{perSheet} * #{page}
+    	) temp, tbl_member
+	WHERE RN > #{perSheet} * (#{page} - 1) AND temp.RD = tbl_member.ROWID
+	]]>
+  </select>
+</mapper>

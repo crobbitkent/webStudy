@@ -11,6 +11,7 @@
 	<typeAliases>
 
 		<typeAlias type="org.kent.board.domain.Board" alias="Board"/>
+		<typeAlias type="org.kent.member.domain.Member" alias="Member"/>
 
 	</typeAliases>
 
@@ -32,6 +33,7 @@
   
 	<mapper resource="org/kent/time/dao/TimeMapper.xml"/>
 	<mapper resource="org/kent/board/dao/BoardMapper.xml"/>
+	<mapper resource="org/kent/member/dao/MemberMapper.xml"/>
 	
   </mappers>
 

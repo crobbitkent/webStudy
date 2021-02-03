@@ -11,6 +11,12 @@
 	]]>
 </insert>
 
+  <select id="getTotal" resultType="int">
+ 	<![CDATA[
+ 		select count(bno) from tbl_board
+	]]>
+  </select>
+
   <select id="getAll" resultType="Board">
  	<![CDATA[
     	SELECT * FROM tbl_board ORDER BY bno desc
@@ -42,7 +48,7 @@
     SELECT ROWNUM RN, RD FROM
         	(
            	SELECT ROWID RD FROM TBL_BOARD
-                ORDER BY bno
+                ORDER BY bno DESC
             ) T WHERE ROWNUM <= #{perSheet} * #{page}
     	) temp, tbl_board
 	WHERE RN > #{perSheet} * (#{page} - 1) AND temp.RD = tbl_board.ROWID

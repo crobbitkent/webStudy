@@ -5,7 +5,8 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 import org.kent.board.domain.Board;
-import org.kent.board.domain.PageInfo;
+import org.kent.common.util.PageInfo;
+import org.kent.common.util.PageMaker;
 
 import lombok.extern.log4j.Log4j;
 
@@ -16,6 +17,28 @@ public class BoardMapperTests {
 	@Before
 	public void ready() {
 		boardDAO = new BoardDAO();
+	}
+	
+	@Test
+	public void testGetTotal() {
+		try {
+			int total = boardDAO.getTotal();
+		log.info(total);
+		
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void testPaging() {
+		int total = 254;
+		PageInfo pageInfo = new PageInfo();
+		pageInfo.setPage(24);	
+		
+		PageMaker pageMaker = new PageMaker(pageInfo, total);
+		
+		log.info(pageMaker);	
 	}
 
 	@Test
@@ -75,7 +98,7 @@ public class BoardMapperTests {
 	@Test
 	public void testGetList() {
 		PageInfo pageInfo = new PageInfo();
-		pageInfo.setPage(9);
+		pageInfo.setPage(24);
 		pageInfo.setPerSheet(10);
 		
 		try {
@@ -86,4 +109,8 @@ public class BoardMapperTests {
 			e.printStackTrace();
 		}
 	}
+	
+	
+	
+	
 }

@@ -15,6 +15,14 @@
     </div>
   </div>
 </form>
+
+<form class="form-horizontal" action="/member/list" method="get">
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-primary">회원 목록</button>
+    </div>
+  </div>
+</form>
     
 <table class="table">
   <thead>
@@ -33,7 +41,7 @@
 	
     <tr>
       <td>${board.bno}</td>
-      <td><a href = '/board/view?bno=${board.bno}'>${board.title}</a></td>
+      <td><a href = '/board/view?bno=${board.bno}&page=${pageMaker.pageInfo.page}' target="_blank">${board.title}</a></td>
       <td>${board.writer}</td>
       <td>${board.regdate}</td>
       <td>${board.updatedate}</td>
@@ -45,21 +53,43 @@
 	</tbody>
 </table>
 
-<nav aria-label="...">
+
+
   <ul class="pagination justify-content-center">
-    <li class="page-item disabled">
-      <span class="page-link">Previous</span>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item active" aria-current="page">
-      <span class="page-link">2</span>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <c:if test="${1 != pageMaker.pageInfo.page}">
     <li class="page-item">
-      <a class="page-link" href="#">Next</a>
+      <a class="page-link" href="/board/list" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
     </li>
+    </c:if>
+    
+  	<c:if test="${pageMaker.prev == true}">
+    <li class="page-item">
+      <a class="page-link" href="/board/list?page=${pageMaker.start - 1}">Previous</a>
+    </li>
+    </c:if>
+
+    <c:forEach begin="${pageMaker.start}" end="${pageMaker.end}" var="num"> 
+    <li class="page-item ${num == pageMaker.pageInfo.page?'active':'' }">   
+    <a class="page-link" href="/board/list?page=${num}">${num}</a></li>
+ 	</c:forEach>
+ 	
+ 	<c:if test="${pageMaker.next == true}">
+    <li class="page-item">
+      <a class="page-link" href="/board/list?page=${pageMaker.end + 1}">Next</a>
+    </li>
+    </c:if>
+   
+   <c:if test="${pageMaker.lastPage > pageMaker.pageInfo.page}">
+    <li class="page-item">
+      <a class="page-link" href="/board/list?page=${pageMaker.lastPage}" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </c:if>
   </ul>
-</nav>
+
     
     	<!-- Page Footer -->
     
