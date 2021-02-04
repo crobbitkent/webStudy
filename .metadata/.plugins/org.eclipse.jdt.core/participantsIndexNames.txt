@@ -1,11 +1,27 @@
 INDEX VERSION 1.131
+C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1736095426.index
+\m2store\src
+C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\857355718.index
+\m2store\src
+C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2034637075.index
+\m2store\src
 C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3023420062.index
 \MyBoard\src
+C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2220613094.index
+\StoreSearcher\src
 C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1086075964.index
 \MyBoard\src
+C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2904032515.index
+\m2store\src
 C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1616060254.index
 \0203\src
+C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\58695673.index
+\0204\src
+C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4153890095.index
+\StoreSearcher\src
 C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3795532138.index
 \0203\src
 C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3073095891.index
 \MyBoard\src
+C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\348911313.index
+\0204\src

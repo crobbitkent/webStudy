@@ -5,8 +5,12 @@
 	String mid = request.getParameter("mid");
 	
 	if(null != mid){
-		session.setAttribute("mid", mid);
-	}
+		
+		Integer temp = (Integer)session.getAttribute("captcha");
+		String cap = temp.toString();	
+		
+		if(mid.equals(cap)){
+			// session.setAttribute("mid", mid);
 
 %>
     
@@ -21,3 +25,10 @@
 	<h1>Login 성공</h1>
 </body>
 </html>
+
+<%
+		} else{
+			response.sendRedirect("/login.jsp");
+		}
+	}
+%>

@@ -1,13 +1,10 @@
 INDEX VERSION 1.131+C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jdt.core
-1933544602.index
-2358463341.index
+4245495049.index
 119238830.index
-2921083978.index
-413664387.index
-2818446458.index
-837779982.index
-3689273242.index
-3883950653.index
+3815146563.index
+318234318.index
 1954995498.index
-3100191672.index
-880527796.index
+2358463341.index
+413664387.index
+837779982.index
+4086597481.index
