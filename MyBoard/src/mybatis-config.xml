@@ -12,6 +12,7 @@
 
 		<typeAlias type="org.kent.board.domain.Board" alias="Board"/>
 		<typeAlias type="org.kent.member.domain.Member" alias="Member"/>
+		<typeAlias type="org.kent.question.domain.Question" alias="Question"/>
 
 	</typeAliases>
 
@@ -21,9 +22,9 @@
       <dataSource type="POOLED">
       
         <property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
-        <property name="url" value="jdbc:oracle:thin:@112.169.196.210:1521:XE"/>
-        <property name="username" value="mingyu"/>
-        <property name="password" value="alsrb"/>
+        <property name="url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
+        <property name="username" value="system"/>
+        <property name="password" value="1234"/>
       
       </dataSource>
     </environment>
@@ -34,6 +35,7 @@
 	<mapper resource="org/kent/time/dao/TimeMapper.xml"/>
 	<mapper resource="org/kent/board/dao/BoardMapper.xml"/>
 	<mapper resource="org/kent/member/dao/MemberMapper.xml"/>
+	<mapper resource="org/kent/question/dao/QuestionMapper.xml"/>
 	
   </mappers>
 

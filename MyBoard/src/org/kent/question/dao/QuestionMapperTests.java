@@ -7,6 +7,7 @@ import org.junit.Test;
 import org.kent.board.domain.Board;
 import org.kent.common.util.PageInfo;
 import org.kent.common.util.PageMaker;
+import org.kent.question.QuestionDTO;
 import org.kent.question.domain.Question;
 
 import lombok.extern.log4j.Log4j;
@@ -23,8 +24,12 @@ public class QuestionMapperTests {
 	@Test
 	public void testGetTotal() {
 		try {
-			int total = questionDAO.getTotal();
-		log.info(total);
+			QuestionDTO dto = QuestionDTO.builder().difficulty(1).mid("admin").build();
+			Long total = questionDAO.getTotal(dto);
+			Long random = (long) (Math.random() * total);
+			
+			log.info("TOTAL = " + total);
+			log.info("RANDOM = " + random);
 		
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -33,14 +38,24 @@ public class QuestionMapperTests {
 	
 	
 	@Test
-	public void testGetAll() {
+	public void testGetOne() {
 
 		try {
-			int total = questionDAO.getTotal();
-			Question q = questionDAO.getAll(total);
-
-
-			log.info(q.getTitle());
+			long beforeTime = System.currentTimeMillis();
+			
+			QuestionDTO dto = QuestionDTO.builder().difficulty(1).mid("admin").build();		
+			Long total = questionDAO.getTotal(dto);		
+			Long random = (long) (Math.random() * total);
+			dto.setRandom(random);			
+			Question q = questionDAO.getOne(dto);
+			
+		    long afterTime = System.currentTimeMillis();
+			long secDiffTime = (afterTime - beforeTime); //
+			System.out.println("StoreDAO db 시간 : " + secDiffTime);
+			
+			log.info("TOTAL = " + total);
+			log.info("RANDOM = " + random);
+			log.info(q.getQno());
 
 		} catch (Exception e) {
 			e.printStackTrace();

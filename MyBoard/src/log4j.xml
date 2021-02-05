@@ -27,7 +27,7 @@
  
 
     <root>  
-        <level value="DEBUG"/>  
+        <level value="FATAL"/>  
         <appender-ref ref="stdout"/> 
         <appender-ref ref="dailyout" /> 
     </root>  

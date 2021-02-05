@@ -2,20 +2,25 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.kent.board.dao.BoardMapper">
+<mapper namespace="org.kent.question.dao.QuestionMapper">
 
-<insert id="insert">
+<select id="getOne" resultType="Question">
 	<![CDATA[
-	INSERT INTO tbl_board (bno, title, content, writer)
-	values (seq_board.nextval, #{title}, #{content}, #{writer})
+select * from tbl_question where qno = (select qno from
+(select rownum rn, qno, quiz, answer, difficulty from tbl_question where qno not in
+    (select qno from tbl_qhistory where mid = 'admin' and qno > 0)
+       and difficulty = #{difficulty})
+where rn = #{random})
 	]]>
-</insert>
+</select>
 
-  <select id="getTotal" resultType="int">
+<select id="getTotal" resultType="long">
  	<![CDATA[
- 		select count(bno) from tbl_board
+ 		select count(*) from tbl_question where qno not in
+    (select qno from tbl_qhistory where mid = 'admin' and qno > 0)
+       and difficulty = #{difficulty}
 	]]>
-  </select>
+</select>
 
 
 </mapper>
