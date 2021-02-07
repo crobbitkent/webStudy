@@ -30,7 +30,6 @@
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="org.kent.question.domain.Question"/>
     <fullyQualifiedTypeName name="org.kent.question.QuestionDTO"/>
-    <fullyQualifiedTypeName name="javax.servlet.annotation.MultipartConfig"/>
     <fullyQualifiedTypeName name="com.sun.java.swing.plaf.windows.TMSchema.Part"/>
     <fullyQualifiedTypeName name="javax.servlet.http.Part"/>
     <fullyQualifiedTypeName name="org.apache.tomcat.jni.File"/>
@@ -44,10 +43,8 @@
     <fullyQualifiedTypeName name="org.keroro.common.dao.BaseDAO"/>
     <fullyQualifiedTypeName name="org.junit.Before"/>
     <fullyQualifiedTypeName name="org.keroro.common.util.PageInfo"/>
-    <fullyQualifiedTypeName name="lombok.extern.log4j.Log4j"/>
     <fullyQualifiedTypeName name="org.junit.Test"/>
     <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
-    <fullyQualifiedTypeName name="org.keroro.question.dto.QuestionDTO"/>
     <fullyQualifiedTypeName name="lombok.Getter"/>
     <fullyQualifiedTypeName name="lombok.Data"/>
     <fullyQualifiedTypeName name="lombok.Builder"/>
@@ -56,8 +53,11 @@
     <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="org.keroro.common.util.ExcelReader"/>
     <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="org.keroro.question.domain.Question"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="org.keroro.question.util.QuestionExcelLoader"/>
     <fullyQualifiedTypeName name="org.keroro.question.domain.Qhistory"/>
+    <fullyQualifiedTypeName name="javax.servlet.annotation.MultipartConfig"/>
+    <fullyQualifiedTypeName name="org.keroro.question.domain.Question"/>
+    <fullyQualifiedTypeName name="org.keroro.question.dto.QuestionDTO"/>
+    <fullyQualifiedTypeName name="lombok.extern.log4j.Log4j"/>
 </qualifiedTypeNameHistroy>
