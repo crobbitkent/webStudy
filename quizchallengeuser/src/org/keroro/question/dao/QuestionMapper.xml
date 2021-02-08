@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.keroro.question.dao.QuestionMapper">
+
+<update id="modifyQuestion">
+	<![CDATA[
+UPDATE tbl_question set 
+	aid = #{aid}, quiz = #{quiz}, answer = #{answer}, updatedate = sysdate, deprecated=#{deprecated}
+	, difficulty=#{difficulty} 
+WHERE qno = #{qno}
+	]]>
+</update>
+
+<select id="getPagedListOfMyHistory" resultType="QhistoryDTO">
+	<![CDATA[
+select
+    history.HNO, history.qno, history.mid, question.quiz, question.difficulty 
+    , question.ANSWER, history.memberanswer, history.CHECKANSWER, history.REGDATE, history.UPDATEDATE
+from tbl_qhistory history, TBL_QUESTION question where history.qno = question.qno and history.mid = #{mid}
+	]]>
+</select>
+
+
+<select id="getTotalOfMyHistory" resultType="int">
+	<![CDATA[
+select
+    count(*)
+from tbl_qhistory history, TBL_QUESTION question where history.qno = question.qno and history.mid = #{mid}
+	]]>
+</select>
+
+
+<select id="getPageListOfMyHistory" resultType="QhistoryDTO">
+	<![CDATA[
+SELECT /*+ordered use_nl(temp tbl_qhistory)*/  history.HNO, history.qno, history.mid, question.quiz, question.difficulty,
+    question.ANSWER, history.memberanswer, history.CHECKANSWER, history.REGDATE, history.UPDATEDATE
+     FROM
+	(
+    SELECT ROWNUM RN, RD FROM
+        	(
+           	select history.ROWID RD from tbl_qhistory history, TBL_QUESTION question
+                where history.qno = question.qno and history.mid = 'hj'
+                ORDER BY hno DESC
+            ) T WHERE ROWNUM <=  #{perSheet} * #{page}
+    	) temp, tbl_qhistory history, tbl_question question
+	WHERE RN > #{perSheet} * (#{page} - 1) AND temp.RD = history.ROWID
+AND history.qno = question.qno and history.mid = #{mid}
+  	]]>
+</select>
+
+
+</mapper>

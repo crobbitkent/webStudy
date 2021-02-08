@@ -30,6 +30,59 @@ public class QuestionController extends MultiController {
 		dao = new QuestionDAO();
 	}
 
+	// 문제 수정 GET
+	public String modifyGET(HttpServletRequest request, HttpServletResponse response) {
+		Long qno = getLong(request, 0L, "qno");
+		log.info(qno);
+		if(0L == qno) {
+			return "re:/error";
+		}
+		
+		Question question = dao.getOneQuestion(qno);
+		
+		request.setAttribute("question", question);
+		
+		return "question/modify";
+	}
+	// 문제 수정 POST
+	public String modifyPOST(HttpServletRequest request, HttpServletResponse response) {
+		log.info("question modifyPOST"); // log.debug();
+		
+		String aid = request.getParameter("aid"); // 인자로 name="AA" 넣으면 value="" 가 반환도니다. 
+		String quiz = request.getParameter("quiz");
+		String answer = request.getParameter("answer");
+		int dif = getInt(request , 3, "difficulty");
+		Long qno = getLong(request, 0L, "qno");
+		
+		if(0L == qno) {
+			return "re:/error";
+		}
+		
+		Question question = Question.builder().qno(qno)
+				.aid(aid).quiz(quiz).answer(answer).difficulty(dif).build();
+		
+		log.info("question : " + question);
+		
+		dao.modifyQuestion(question);
+		
+		return "re:/question/view?qno=" + qno;
+	}
+	
+	// 문제 뷰
+	public String viewGET(HttpServletRequest request, HttpServletResponse response) {
+		Long qno = getLong(request, 0L, "qno");
+		log.info(qno);
+		if(0L == qno) {
+			return "re:/error";
+		}
+		
+		Question question = dao.getOneQuestion(qno);
+		
+		request.setAttribute("question", question);
+		
+		return "question/view";
+	}
+	
 	// 문제 등록 1
 	public String registerGET(HttpServletRequest request, HttpServletResponse response) {
 		log.info("question registerGET"); // log.debug();
@@ -105,7 +158,7 @@ public class QuestionController extends MultiController {
 
 			log.info("question listGET PageInfo : " + info);
 
-			PageMaker pageMaker = new PageMaker(info, dao.getTotalOfQhistory());
+			PageMaker pageMaker = new PageMaker(info, dao.getTotalOfQuestion());
 
 			List<Question> questions = dao.getPagedListOfQuestion(info);
 

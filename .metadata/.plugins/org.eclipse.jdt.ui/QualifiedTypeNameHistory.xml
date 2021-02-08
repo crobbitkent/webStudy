@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="review.dto.ReviewDTO"/>
-    <fullyQualifiedTypeName name="review.dao.ReviewDAO"/>
-    <fullyQualifiedTypeName name="java.beans.Introspector"/>
-    <fullyQualifiedTypeName name="java.beans.BeanInfo"/>
-    <fullyQualifiedTypeName name="java.beans.PropertyDescriptor"/>
     <fullyQualifiedTypeName name="java.lang.reflect.Method"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="org.kent.common.dao.MyBatisMaker"/>
     <fullyQualifiedTypeName name="org.kent.common.controller.MultiController"/>
     <fullyQualifiedTypeName name="org.kent.board.dao.BoardDAO"/>
-    <fullyQualifiedTypeName name="lombok.Builder.Default"/>
     <fullyQualifiedTypeName name="org.kent.board.domain.Board"/>
     <fullyQualifiedTypeName name="org.kent.board.domain.PageInfo"/>
     <fullyQualifiedTypeName name="lombok.ToString"/>
@@ -40,24 +34,30 @@
     <fullyQualifiedTypeName name="java.io.InputStream"/>
     <fullyQualifiedTypeName name="java.io.FileInputStream"/>
     <fullyQualifiedTypeName name="org.keroro.question.dao.QuestionDAO"/>
-    <fullyQualifiedTypeName name="org.keroro.common.dao.BaseDAO"/>
-    <fullyQualifiedTypeName name="org.junit.Before"/>
-    <fullyQualifiedTypeName name="org.keroro.common.util.PageInfo"/>
-    <fullyQualifiedTypeName name="org.junit.Test"/>
     <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
     <fullyQualifiedTypeName name="lombok.Getter"/>
     <fullyQualifiedTypeName name="lombok.Data"/>
     <fullyQualifiedTypeName name="lombok.Builder"/>
     <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
     <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
-    <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="org.keroro.common.util.ExcelReader"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="org.keroro.question.util.QuestionExcelLoader"/>
     <fullyQualifiedTypeName name="org.keroro.question.domain.Qhistory"/>
     <fullyQualifiedTypeName name="javax.servlet.annotation.MultipartConfig"/>
     <fullyQualifiedTypeName name="org.keroro.question.domain.Question"/>
     <fullyQualifiedTypeName name="org.keroro.question.dto.QuestionDTO"/>
+    <fullyQualifiedTypeName name="org.keroro.admin.domain.Admin"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.Cookie"/>
+    <fullyQualifiedTypeName name="org.keroro.common.dao.BaseDAO"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="lombok.extern.log4j.Log4j"/>
+    <fullyQualifiedTypeName name="org.junit.Before"/>
+    <fullyQualifiedTypeName name="org.junit.Test"/>
+    <fullyQualifiedTypeName name="org.keroro.common.controller.MultiController"/>
+    <fullyQualifiedTypeName name="lombok.Builder.Default"/>
+    <fullyQualifiedTypeName name="org.keroro.question.dto.PageInfoDTO"/>
+    <fullyQualifiedTypeName name="org.keroro.common.util.PageInfo"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="org.keroro.question.dto.QhistoryDTO"/>
 </qualifiedTypeNameHistroy>

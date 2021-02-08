@@ -19,6 +19,17 @@ public class QuestionDAO extends BaseDAO {
 
 	private static final String NAMESPACE = "org.keroro.question.dao.QuestionMapper";
 
+	
+	public void modifyQuestion(Question q) {
+		try (	SqlSession session = getSession()){
+			 session.update(NAMESPACE + ".modifyQuestion", q);	
+			 session.commit();
+		} catch(Exception e) {		
+			e.printStackTrace();		
+		} 
+	}
+	
+	
 	public int getTotalForDTO(QuestionDTO dto) {
 	
 		log.debug("question get total");		

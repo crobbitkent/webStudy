@@ -25,8 +25,21 @@ public class QuestionDAOTests {
 	}
 	
 	@Test
+	public void testModifyQuestion() {
+		Long qno = 131075L;
+		
+		Question q1 = Question.builder().qno(qno).aid("mingyuAdmin").quiz("modifyQuestion")
+				.answer("modifyAnswer").deprecated("n").difficulty(5).build();
+		
+		dao.modifyQuestion(q1);
+		
+		Question q2 = dao.getOneQuestion(qno);
+		log.info(q2);
+	}
+	
+	@Test
 	public void testGetOneQuestion() {
-		Question q = dao.getOneQuestion(393220L);
+		Question q = dao.getOneQuestion(131075L);
 		
 		log.info(q);
 	}

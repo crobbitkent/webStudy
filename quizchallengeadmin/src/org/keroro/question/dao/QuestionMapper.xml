@@ -4,12 +4,20 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.keroro.question.dao.QuestionMapper">
 
+<update id="modifyQuestion">
+	<![CDATA[
+UPDATE tbl_question set 
+	aid = #{aid}, quiz = #{quiz}, answer = #{answer}, updatedate = sysdate, deprecated=#{deprecated}
+	, difficulty=#{difficulty} 
+WHERE qno = #{qno}
+	]]>
+</update>
 
 <select id="getRandomQuestion" resultType="Question">
 	<![CDATA[
 	select * from tbl_question where qno = (select qno from
 	(select rownum rn, qno, quiz, answer, difficulty from tbl_question where qno not in
-    	(select qno from tbl_qhistory where mid = 'admin' and qno > 0)
+    	(select qno from tbl_qhistory where mid = #{mid} and qno > 0)
     	and difficulty = #{difficulty})
 	where rn = #{random})
 	]]>
@@ -24,7 +32,7 @@
 <select id="getTotalForDTO" resultType="int">
  	<![CDATA[
  		select count(*) from tbl_question where qno not in
-    (select qno from tbl_qhistory where mid = 'admin' and qno > 0)
+    (select qno from tbl_qhistory where mid = #{mid} and qno > 0)
        and difficulty = #{difficulty}
  	]]>
 </select>
@@ -71,7 +79,9 @@
 
 
 
-
+<!-- QHISTORY -->
+<!-- QHISTORY -->
+<!-- QHISTORY -->
 <select id="getPagedListOfQhistory" resultType="QhistoryDTO">
  	 	<![CDATA[
 	SELECT /*+ordered use_nl(temp tbl_qhistory)*/ hno, qno, mid, memberAnswer, checkAnswer, regDate, updateDate FROM
@@ -117,6 +127,17 @@ select
 from
 (select * from tbl_qhistory) history, (select * from TBL_QUESTION) question where history.qno = question.qno
 	]]>
+</select>
+
+
+<select id="getQuestionByMID" resultType="QhistoryDTO">
+ 	<![CDATA[
+ 	select
+    history.HNO, history.qno, history.mid, question.quiz, question.ANSWER,
+    history.memberanswer, history.CHECKANSWER, history.REGDATE, history.UPDATEDATE
+from
+(select * from tbl_qhistory) history, (select * from TBL_QUESTION) question where history.qno = question.qno
+ 	]]>
 </select>
 
 

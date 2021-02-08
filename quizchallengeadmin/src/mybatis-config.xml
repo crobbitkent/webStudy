@@ -8,10 +8,12 @@
   </settings>
   
   <typeAliases>
+  	<typeAlias type="org.keroro.member.domain.Member" alias="Member"/>
+	<typeAlias type="org.keroro.admin.domain.Admin" alias="Admin"/>
+	
 	<typeAlias type="org.keroro.question.domain.Question" alias="Question"/>
 	<typeAlias type="org.keroro.question.domain.Qhistory" alias="Qhistory"/>
 	<typeAlias type="org.keroro.question.dto.QhistoryDTO" alias="QhistoryDTO"/>
-	<typeAlias type="org.keroro.member.domain.Member" alias="Member"/>
   </typeAliases>
   
   <environments default="development">
@@ -27,8 +29,14 @@
   </environments>
   
   <mappers>
+  	<mapper resource="org/keroro/member/dao/MemberMapper.xml"/>
+	<mapper resource="org/keroro/admin/dao/AdminMapper.xml"/>
+	
 	<mapper resource="org/keroro/time/dao/TimeMapper.xml"/>
 	<mapper resource="org/keroro/question/dao/QuestionMapper.xml"/>
 	<mapper resource="org/keroro/member/dao/MemberMapper.xml"/>
+	
+	<mapper resource="org/keroro/qnaboard/dao/QnaBoardMapper.xml" />
+	<mapper resource="org/keroro/qnaboard/reply/dao/ReplyMapper.xml" />
   </mappers>
 </configuration>
