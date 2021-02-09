@@ -5,7 +5,15 @@
 
 <!-- Page Heading -->
 <h1 class="h3 mb-4 text-gray-800">문제 목록</h1>
-      
+     
+
+<form class="form-horizontal" action="/mgr/admin/home" method="get">
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-primary">HOME</button>
+    </div>
+  </div>
+</form>
     
 <form class="form-horizontal" action="/mgr/question/register" method="get">
   <div class="form-group">
@@ -15,13 +23,6 @@
   </div>
 </form>
 
-<form class="form-horizontal" action="/mgr/qhistory/list" method="get">
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-primary">문제 내역</button>
-    </div>
-  </div>
-</form>
     
 <table class="table">
   <thead>

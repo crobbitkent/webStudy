@@ -48,6 +48,8 @@ public class LoginController extends MultiController {
 			String remember = request.getParameter("remember");
 			if(null != remember &&  remember.equals("ok")) {
 				log.info("cookie ok");
+				
+				// 쿠키 발행
 				Cookie ck = new Cookie("aid", aid);
 				// 1시간 유통기한
 				ck.setMaxAge(60*60);				

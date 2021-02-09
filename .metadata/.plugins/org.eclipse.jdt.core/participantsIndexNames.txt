@@ -1,6 +1,6 @@
 INDEX VERSION 1.131
-C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2034637075.index
-\m2store\src
+C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2678065995.index
+\quizchallengeuser\src
 C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1613876016.index
 \quizchallengeadmin\src
 C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2964910633.index
@@ -27,8 +27,12 @@ C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspse
 \0205\src
 C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1617040360.index
 \quizchallengeadmin\src
+C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\32553026.index
+\quizchallengeuser\src
 C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2151973833.index
 \quizchallengeadmin\src
+C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1056372395.index
+\quizchallengeuser\src
 C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3167757303.index
 \quizchallengeuser\src
 C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3073095891.index
@@ -39,6 +43,8 @@ C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspse
 \quizchallengeuser\src
 C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\348911313.index
 \0204\src
+C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\265254996.index
+\quizchallengeuser\src
 C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3698308894.index
 \quizchallengeuser\src
 C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2461938767.index
@@ -53,9 +59,13 @@ C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspse
 \quizchallengeadmin\src
 C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3084040881.index
 \quizchallengeadmin\src
+C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3039827103.index
+\quizchallengeuser\src
+C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\643829916.index
+\quizchallengeuser\src
 C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2332557538.index
 \quizchallengeadmin\src
 C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\58695673.index
 \0204\src
-C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2678065995.index
-\quizchallengeuser\src
+C:\Users\crobb\git\newWebStudy\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2034637075.index
+\m2store\src

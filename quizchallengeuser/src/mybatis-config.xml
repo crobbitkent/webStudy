@@ -10,7 +10,12 @@
   <typeAliases>
 
 	<typeAlias type="org.keroro.question.dto.QhistoryDTO" alias="QhistoryDTO"/>
+ 	<typeAlias type="org.keroro.member.domain.Member" alias="Member"/>
+    <typeAlias type="org.keroro.member.dto.MemberDTO" alias="MemberDTO"/>  
+    <typeAlias type="org.keroro.member.dto.ScoreDTO" alias="ScoreDTO"/>  
 
+  	<typeAlias type="org.keroro.question.domain.Question" alias="Question"/>
+  	<typeAlias type="org.keroro.question.domain.Qhistory" alias="Qhistory"/>
   </typeAliases>
   
   <environments default="development">
@@ -28,6 +33,9 @@
   <mappers>
 
 	<mapper resource="org/keroro/question/dao/QuestionMapper.xml"/>
-
+	<mapper resource="org/keroro/member/dao/MemberMapper.xml"/>
+	<mapper resource="org/keroro/qnaboard/dao/QnaBoardMapper.xml"/>
+	<mapper resource="org/keroro/qnaboard/reply/dao/ReplyMapper.xml" />
+	
   </mappers>
 </configuration>

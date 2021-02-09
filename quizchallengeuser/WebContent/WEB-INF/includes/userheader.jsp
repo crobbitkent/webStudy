@@ -58,7 +58,7 @@
             <a class="nav-link" href="#">통계</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">QnA</a>
+            <a class="nav-link" href="/user/qnaboard/list">QnA</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/user/myhistory/list">나의 Challenge</a>
@@ -72,10 +72,21 @@
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
           </li>
+          
+
+          
         </ul>
         <form>
           <input class="form-control" type="text" placeholder="Search" aria-label="Search">
         </form>
+        
+<form action = "/user/login/logout" method = 'post'>
+  <div class="form-horizontal">
+    <div class="col-sm-offset-2 col-sm-11">
+      <button type="submit" class="btn btn-danger" "align-items-right">Log out</button>
+    </div>
+  </div>
+</form>
       </div>
     </div>
   </nav>

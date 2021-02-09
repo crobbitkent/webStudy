@@ -11,7 +11,6 @@ import org.keroro.admin.domain.Admin;
 import org.keroro.common.controller.MultiController;
 import org.keroro.common.util.PageInfo;
 import org.keroro.common.util.PageMaker;
-import org.keroro.member.domain.Member;
 
 import lombok.Builder.Default;
 import lombok.extern.log4j.Log4j;

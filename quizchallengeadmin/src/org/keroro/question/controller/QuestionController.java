@@ -80,6 +80,8 @@ public class QuestionController extends MultiController {
 		
 		request.setAttribute("question", question);
 		
+		
+		
 		return "question/view";
 	}
 	

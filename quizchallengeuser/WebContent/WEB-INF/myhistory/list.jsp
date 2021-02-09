@@ -35,9 +35,10 @@
       <td>${question.memberAnswer}</td>
       <td>${question.checkAnswer}</td>
       <td>${question.regDate}</td>
- <td><form class="form-horizontal" action="/user/qnaboard/register?qno=${question.qno}" method="get">
-      <button type="submit" class="btn btn-warning">이의 제기</button>
-    
+ <td>
+ <form class="form-horizontal" action="/user/qnaboard/register" method="get">
+      	<input type="hidden" name="qno" value="${question.qno}">
+      <button type="submit" class="btn btn-warning">이의 제기</button>   
 </form>
 </td>
     </tr>   

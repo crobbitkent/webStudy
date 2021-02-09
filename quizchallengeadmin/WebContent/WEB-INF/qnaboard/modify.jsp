@@ -19,28 +19,28 @@
 		<label class="control-label col-sm-2" for="sno">QuizNumber</label>
 		<div class="col-sm-10">
 			<input type="text" class="form-control" name="qno"
-				value='${board.qno}' readonly="readonly">
+				value='${board.qno}' >
 		</div>
 	</div>
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="title">제목</label>
 		<div class="col-sm-10">
 			<input type="text" class="form-control" name="title"
-				value='${board.title}' readonly="readonly">
+				value='${board.title}'>
 		</div>
 	</div>
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="content">게시글내용</label>
 		<div class="col-sm-10">
 			<input type="text" class="form-control" name="content"
-				value='${board.content}' readonly="readonly">
+				value='${board.content}'>
 		</div>
 	</div>
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="category">카테고리</label>
 		<div class="col-sm-10">
 			<input type="text" class="form-control" name="category"
-				value='${board.category}' readonly="readonly">
+				value='${board.category}'>
 		</div>
 	</div>
 	<div class="form-group">
@@ -52,7 +52,7 @@
 	</div>
 	<div class="form-group">
 		<div class="col-sm-offset-2 col-sm-10">
-			<button type="submit" class="btn btn-danger">수정하기</button>
+			<button type="submit" class="btn btn-dark">수정하기</button>
 		</div>
 	</div>
 </form>

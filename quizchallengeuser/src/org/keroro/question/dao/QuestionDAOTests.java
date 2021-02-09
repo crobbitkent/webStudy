@@ -5,36 +5,54 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 import org.keroro.common.util.PageInfo;
+import org.keroro.question.domain.Qhistory;
+import org.keroro.question.domain.Question;
 import org.keroro.question.dto.QhistoryDTO;
+import org.keroro.question.dto.QuestionDTO;
 
 import lombok.extern.log4j.Log4j;
 
+
+
 @Log4j
 public class QuestionDAOTests {
-	private QuestionDAO dao;
-	
-	@Before
-	public void ready() {
-		dao = new QuestionDAO();
-	}
-	
+	QuestionDAO dao = new QuestionDAO();
+	QhistoryDAO hdao = new QhistoryDAO();
 	@Test
-	public void testGetMyHistory() {
-		List<QhistoryDTO> list = dao.getMyHistory("mingyu");
-		list.forEach(q->log.info(q));
+	public void getRandomQuestionTests() {
+		QuestionDTO dto = new QuestionDTO();
+		dto.setDifficulty(3);
+		dto.setMid("mingyu");
+		dto.setRandom(55);
+		Question quest = dao.getRandomQuestion(dto);
+		System.out.println(quest.toString());
 	}
-	
 	@Test
-	public void testGetTotalOfMyHistory() {
-		int result = dao.getTotalOfMyHistory("mingyu");
-		log.info(result);
+	public void insertQhistoryTests() {
+		Qhistory qhis = new Qhistory();
+		qhis.setCheckAnswer("o");
+		qhis.setMemberAnswer("test");
+		qhis.setMid("testt");
+		qhis.setQno(123L);
+		dao.insertQhistory(qhis);
 	}
-	
 	@Test
-	public void testGetPagedListOfMyHistory() {
-		PageInfo info = PageInfo.builder().page(2).perSheet(10).build();
+	public void getTotalForDTOTests() {
+		QuestionDTO dto = new QuestionDTO();
+		dto.setDifficulty(5);
+		dto.setMid("hj");
 		
-		List<QhistoryDTO> list  = dao.getPageListOfMyHistory("hj", info);
-		list.forEach(q->log.info(q));
+		System.out.println(dao.getTotalForDTO(dto));
 	}
+	
+	@Test
+	public void testGetPaged(){
+		PageInfo info = PageInfo.builder().page(1).perSheet(10).build();
+		String mid = "hj";
+		
+		List<QhistoryDTO> list = hdao.getPageListOfMyHistory(mid, info);
+		
+		list.forEach(h->System.out.println(h.getHno()));
+	}
+	
 }

@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.keroro.common.util.ExcelReader;
 import org.keroro.common.util.PageInfo;
-import org.keroro.member.domain.Member;
+import org.keroro.usermember.domain.Member;
 import org.keroro.question.domain.Qhistory;
 import org.keroro.question.domain.Question;
 import org.keroro.question.dto.QhistoryDTO;

@@ -5,7 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.keroro.common.dao.BaseDAO;
 import org.keroro.common.util.PageInfo;
-import org.keroro.member.domain.Member;
+import org.keroro.usermember.domain.Member;
 import org.keroro.question.domain.Qhistory;
 import org.keroro.question.domain.Question;
 import org.keroro.question.dto.QhistoryDTO;
