@@ -267,6 +267,37 @@ public class MemberDAO extends BaseDAO {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		}
+		
+		
+		//=====================AUTO LOGIN================''
+		// 자동로그인 원할 시 세션ID & 유효시간 입력
+		public void keepLogin(Map map) throws Exception {		
+			try(SqlSession session = MyBatisMaker.INSTANCE.getFactory().openSession()) {
+				
+				session.update(NAMESPACE + ".keepLogin", map);
+				
+				session.commit();
+				
+			} catch (Exception e) {
+				
+				e.printStackTrace();
+				
+			}
 
+		}	
+		
+		// 자동로그인 체크 & 유효시간 체크
+		public Member checkSessionKey(String sessionKey) throws Exception {		
+			try(SqlSession session = MyBatisMaker.INSTANCE.getFactory().openSession()) {
+				
+				return session.selectOne(NAMESPACE + ".checkSessionKey", sessionKey);
+				
+			} catch (Exception e) {
+				
+				e.printStackTrace();
+				
+			}			
+			return null;
 		}
 }

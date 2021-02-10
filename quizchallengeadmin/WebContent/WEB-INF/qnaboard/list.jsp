@@ -7,13 +7,7 @@
 <h1 class="h3 mb-4 text-gray-800">QnABoard List Page</h1>
 
 
-<form class="form-horizontal" action="/mgr/admin/home" method="get">
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-primary">HOME</button>
-    </div>
-  </div>
-</form>
+
 
 
 <div class="list-group">

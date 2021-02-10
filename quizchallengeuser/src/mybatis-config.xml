@@ -16,6 +16,8 @@
 
   	<typeAlias type="org.keroro.question.domain.Question" alias="Question"/>
   	<typeAlias type="org.keroro.question.domain.Qhistory" alias="Qhistory"/>
+
+
   </typeAliases>
   
   <environments default="development">
@@ -37,5 +39,8 @@
 	<mapper resource="org/keroro/qnaboard/dao/QnaBoardMapper.xml"/>
 	<mapper resource="org/keroro/qnaboard/reply/dao/ReplyMapper.xml" />
 	
+	<mapper resource="org/keroro/qnaboard/dao/QnaBoardMapper.xml" />
+	<mapper resource="org/keroro/qnaboard/reply/dao/ReplyMapper.xml" />
+	<mapper resource="org/keroro/qnaboard/adminanswer/dao/AdminAnswerMapper.xml" />
   </mappers>
 </configuration>

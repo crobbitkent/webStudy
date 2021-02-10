@@ -71,7 +71,8 @@
 	
 	<select id="getOne" resultType="org.keroro.qnaboard.domain.QnaBoard">
 	<![CDATA[
-		select * from TBL_QNABOARD where BNO = #{bno}
+		select * from tbl_question ,(select * from tbl_qnaboard where bno = #{bno}) board
+   		where tbl_question.qno = board.qno
 		]]>
 	</select>
 	

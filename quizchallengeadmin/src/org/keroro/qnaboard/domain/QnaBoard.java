@@ -17,8 +17,8 @@ import lombok.Setter;
 public class QnaBoard {
 
 	private Long bno,qno;
-	private String mid, aid, title, content, status;
-	private int state, category;
+	private String mid, aid, title, content, status, answer, quiz;
+	private int state, category, difficulty;
 	private Date regdate, updateDate;
 	
 	
@@ -61,5 +61,14 @@ public class QnaBoard {
 	}
 	public void setUpdateDate(Date updateDate) {
 		this.updateDate = updateDate;
+	}
+	public void setAnswer(String answer) {
+		this.answer = answer;
+	}
+	public void setQuiz(String quiz) {
+		this.quiz = quiz;
+	}
+	public void setDifficulty(int difficulty) {
+		this.difficulty = difficulty;
 	}
 }

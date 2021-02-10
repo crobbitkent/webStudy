@@ -5,7 +5,6 @@ import java.util.List;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.keroro.common.controller.MultiController;
 import org.keroro.common.util.PageInfo;
@@ -83,10 +82,7 @@ public class QnaBoardController extends MultiController {
 	public String viewGET(HttpServletRequest req, 
 			HttpServletResponse res) throws Exception {
 		
-		Long bno = getLong(req, 0L,"bno");
-		
-		HttpSession session = req.getSession();
-		String aid = (String)session.getAttribute("aid");
+		Long bno = getLong(req, 0L, "bno");
 		
 		//본게시글
 		QnaBoard board = dao.getOne(bno);
@@ -98,7 +94,6 @@ public class QnaBoardController extends MultiController {
 		req.setAttribute("answer", answer);
 		req.setAttribute("replyList", replyList);
 		req.setAttribute("board",board);
-		req.setAttribute("aid",aid);
 		
 		return "qnaboard/view";
 	}
@@ -155,6 +150,7 @@ public class QnaBoardController extends MultiController {
 
 	public String modifyGET(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		Long bno = getLong(req, 0L,"bno");
+		
 		QnaBoard board = dao.getOne(bno);
 		req.setAttribute("board", board);
 		return "qnaboard/modify";

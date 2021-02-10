@@ -52,7 +52,7 @@
     <input type="password" name="mpw" class="form-control" placeholder="Password" required>
     <div class="checkbox mb-3">
       <label>
-        <input type="checkbox" value="remember-me"> Remember me
+        <input type="checkbox" name="remember" value="ok"> Remember me
       </label>
       <br></br> 
      <c:if test="${loginFail == 1}">

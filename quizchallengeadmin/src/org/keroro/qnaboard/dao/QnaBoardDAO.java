@@ -48,7 +48,7 @@ public class QnaBoardDAO {
 	public QnaBoard getOne(Long bno) {
 
 		try (SqlSession session = MyBatisMaker.INSTANCE.getFactory().openSession()) {
-
+			
 			return session.selectOne(NAMESPACE + ".getOne", bno);
 
 		} catch (Exception e) {

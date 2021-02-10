@@ -137,4 +137,16 @@ VALUES (#{mid}, #{mpw}, #{mname}, sysdate, sysdate)
 	</insert>
 	
 	
+	
+<update id="keepLogin">
+	<![CDATA[
+    update TBL_MEMBER 
+    set sessionKey = #{sessionKey}, sessionLimit = #{sessionLimit} where mid=#{mid}
+    ]]>
+</update>	
+
+<select id="checkSessionKey" parameterType="String" resultType="Member">
+    select * from TBL_MEMBER where sessionKey = #{sessionKey} and sessionLimit > sysdate
+</select>
+	
 </mapper>

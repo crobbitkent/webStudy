@@ -38,5 +38,6 @@
 	
 	<mapper resource="org/keroro/qnaboard/dao/QnaBoardMapper.xml" />
 	<mapper resource="org/keroro/qnaboard/reply/dao/ReplyMapper.xml" />
+	<mapper resource="org/keroro/qnaboard/adminanswer/dao/AdminAnswerMapper.xml" />
   </mappers>
 </configuration>

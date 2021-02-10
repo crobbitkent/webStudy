@@ -24,7 +24,7 @@ public class QnABoardDAOTests {
 	
 	@Test
 	public void getOneTest() throws Exception {
-		Long bno = 258L;
+		Long bno = 311L;
 		QnaBoard board = dao.getOne(bno);
 
 			log.info(board);
@@ -68,5 +68,13 @@ public class QnABoardDAOTests {
 				.state(1)
 				.build();
 		dao.acceptAnswer(board);
+	}
+	
+	@Test
+	public void testInt() {
+		int num = 257;
+		byte value = (byte) num;
+		System.out.println(value);
+
 	}
 }

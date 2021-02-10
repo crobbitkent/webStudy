@@ -28,6 +28,18 @@
 		<td><input type="number" class="form-control" name="qno" value='${board.qno}' readonly="readonly"></td>
 	</tr>
 	<tr>
+		<th>난이도</th>
+		<td><input type="number" class="form-control" name="difficulty" value='${board.difficulty}' readonly="readonly"></td>
+	</tr>
+	<tr>
+		<th>퀴즈</th>                                     <!-- 내용 입력 -->
+		<td><textarea rows="6" class="form-control" name="quiz"  readonly="readonly">${board.quiz}</textarea></td>
+	</tr>
+	<tr>
+		<th>정답</th>
+		<td><input type="text" class="form-control" name="answer" value='${board.answer}' readonly="readonly"></td>
+	</tr>
+	<tr>
 		<th>카테고리</th>
 		<td><input type="number" class="form-control" name="category" placeholder="1" value='${board.category}' readonly="readonly"></td>
 	</tr>

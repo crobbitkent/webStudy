@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Member {
-	String mid, mpw, mname;
-	double grade;
-	Date regDate, updateDate;
+	private String mid, mpw, mname, sessionKey;
+	private double grade;
+	private Date regDate, updateDate, sessionLimit;
 }

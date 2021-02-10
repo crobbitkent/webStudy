@@ -34,6 +34,23 @@
 				value='${board.qno}' readonly="readonly"></td>
 		</tr>
 		<tr>
+			<th>난이도</th>
+			<td><input type="number" class="form-control" name="difficulty"
+				value='${board.difficulty}' readonly="readonly"></td>
+		</tr>
+		<tr>
+			<th>퀴즈</th>
+			<!-- 내용 입력 -->
+			<td><textarea rows="6" class="form-control" name="quiz"
+					readonly="readonly">${board.quiz}</textarea></td>
+		</tr>
+		<tr>
+			<th>정답</th>
+			<td><input type="text" class="form-control" name="answer"
+				value='${board.answer}' readonly="readonly"></td>
+		</tr>
+		<tr>
+		<tr>
 			<th>카테고리</th>
 			<td><input type="number" class="form-control" name="category"
 				placeholder="1" value='${board.category}' readonly="readonly"></td>
@@ -58,6 +75,7 @@
 		</tr>
 
 	</table>
+	<button class="btn btn-dark" type="submit">수정하기</button>
 </form>
 
 
@@ -71,31 +89,32 @@
 </form>
 <!-- 답변완료창에서 보이는 답변 -->
 <c:if test="${board.state eq 1}">
-<form action="/mgr/qnaboard/answerModify" method="get" class="form-horizontal">
-	<input type="hidden" name="action">
-	<!-- action -->
-	<table class="table table-striped table-bordered">
-		<tr>
-			<th>작성자</th>
-			<!-- 작성자 입력 -->
-			<td><input type="text" class="form-control" name="aid"
-				value="${answer.aid}" readonly="readonly"></td>
-		</tr>
-		<tr>
-			<th>내용</th>
-			<!-- 내용 입력 -->
-			<td><textarea rows="10" class="form-control" name="answer"
-					readonly="readonly">${answer.answer}</textarea></td>
-		</tr>
-		<tr>
-			<th>날짜</th>
-			<!-- 제목 입력 -->
-			<td><input type="Date" class="form-control" name="regdate"
-				value='${answer.regdate}' readonly="readonly"></td>
-		</tr>
-	</table>
-	<button class="btn btn-dark" type="submit">수정하기</button>
-</form>
+	<form action="/mgr/qnaboard/answerModify" method="get"
+		class="form-horizontal">
+		<input type="hidden" name="action">
+		<!-- action -->
+		<table class="table table-striped table-bordered">
+			<tr>
+				<th>작성자</th>
+				<!-- 작성자 입력 -->
+				<td><input type="text" class="form-control" name="aid"
+					value="${answer.aid}" readonly="readonly"></td>
+			</tr>
+			<tr>
+				<th>내용</th>
+				<!-- 내용 입력 -->
+				<td><textarea rows="10" class="form-control" name="answer"
+						readonly="readonly">${answer.answer}</textarea></td>
+			</tr>
+			<tr>
+				<th>날짜</th>
+				<!-- 제목 입력 -->
+				<td><input type="Date" class="form-control" name="regdate"
+					value='${answer.regdate}' readonly="readonly"></td>
+			</tr>
+		</table>
+		<button class="btn btn-dark" type="submit">수정하기</button>
+	</form>
 </c:if>
 <!-- 답변 대기인 화면에서만 나오는 화면 -->
 <c:if test="${board.state eq 2}">
@@ -104,14 +123,15 @@
 			<tr>
 				<th>게시글번호</th>
 				<td><input type="hidden" class="form-control" name="bno"
-				style="width: 50px; height: 30px;" value="${board.bno }" readonly="readonly"></td>
+					style="width: 50px; height: 30px;" value="${board.bno }"
+					readonly="readonly"></td>
 			</tr>
 			<tr>
-			<th>작성자</th>
+				<th>작성자</th>
 				<!-- 작성자 입력 -->
-			<td><input type="text" class="form-control" name="aid" value="${aid}" readonly="readonly"
-			style="width: 100px; height: 30px;"></td>
-		</tr>
+				<td><input type="text" class="form-control" name="aid"
+					style="width: 100px; height: 30px;"></td>
+			</tr>
 			<tr>
 				<th>내용</th>
 				<!-- 내용 입력 -->
