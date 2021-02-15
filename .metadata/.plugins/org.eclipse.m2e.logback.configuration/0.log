@@ -17840,3 +17840,11 @@ org.eclipse.core.runtime.CoreException: Launch configuration TimeMapperTests.tes
 2021-02-10 12:33:56,626 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\crobb\git\newWebStudy\quizchallengeadmin\src\test\resources
 2021-02-10 15:51:11,046 [Worker-66: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
 2021-02-10 15:51:11,055 [Worker-66: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-02-10 15:51:11,064 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\crobb\git\newWebStudy\quizchallengeadmin\src\main\resources
+2021-02-10 15:51:11,065 [Worker-66: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-02-10 15:51:11,071 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\crobb\git\newWebStudy\quizchallengeadmin\src\test\resources
+2021-02-10 17:51:38,924 [Worker-108: Building] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2021-02-10 17:51:38,932 [Worker-108: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-02-10 17:51:38,939 [Worker-108: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\crobb\git\newWebStudy\quizchallengeadmin\src\main\resources
+2021-02-10 17:51:38,940 [Worker-108: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-02-10 17:51:38,946 [Worker-108: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\crobb\git\newWebStudy\quizchallengeadmin\src\test\resources

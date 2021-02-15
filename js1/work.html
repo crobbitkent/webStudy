@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>my work</title>
+</head>
+<body>
+
+    <button onclick="createUL()">Create</button>
+    <button onclick="showUL()">Show</button>
+    <button onclick="updateUL()">Update</button>
+    <button onclick="deleteUL()">Delete</button>
+
+    <ul>
+    </ul>
+
+<script>
+    // create 버튼을 클릭하면 ul에 li를 만들어서 넣는다.
+    // createElement, createTextNode가 필요
+    function createUL(){
+        console.log("create");
+
+        // 1. ul 찾기
+        var ul = document.querySelector('ul');
+        console.log(ul);
+
+        // 2. li 만들기
+        var newLi = document.createElement("li");
+
+        // 3. 값 설정하기
+        newLi.append("AAA");
+
+        // 4. ul에 붙이기
+        ul.appendChild(newLi);
+
+        console.log(ul);
+    }
+
+    function showUL(){
+        console.log("show");
+        // li를 선택했을 때 보여주기...
+    }
+
+    function updateUL(){
+        console.log("update");
+        // 모든 li를 ZZZ로 바꾼다...
+        // setAttribute, innerHTML
+        var ul = document.querySelector('ul');
+        var lists = ul.getElementsByTagName("li");
+
+        for(var i = 0; i < lists.length; ++i){
+                lists[i].innerHTML = "ZZZ";
+        }
+        console.log(lists);
+    }
+
+    function deleteUL(){
+        console.log("delete");
+        // ul을 비운다.
+        var ul = document.querySelector('ul');
+        var lists = ul.getElementsByTagName("li");
+        var count = lists.length;
+        for(var i = 0; i < count; ++i){
+            ul.removeChild(lists[0]);
+        }
+    }
+
+
+
+</script>
+
+</body>
+</html>

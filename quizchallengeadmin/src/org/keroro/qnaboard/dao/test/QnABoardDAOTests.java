@@ -72,9 +72,11 @@ public class QnABoardDAOTests {
 	
 	@Test
 	public void testInt() {
-		int num = 257;
-		byte value = (byte) num;
-		System.out.println(value);
-
+int[] arr = new int[10];
+		
+		System.out.println(arr.length);
+		System.out.println(arr[0]);
+		arr[0] = 10;
+		System.out.println(arr[0]);
 	}
 }

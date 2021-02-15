@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MP3</title>
+</head>
+<body>
+
+<style>
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        perspective: 1000px;
+        overflow-style: auto;
+
+    }
+    .music {
+        width: 200px;
+        height: 200px;
+        background-color: gray;
+        transform-style: preserve-3d;
+        margin: 20px;
+    }
+
+    .destroyer {
+        width: 200px;
+        height: 200px;
+        background-color: black;
+        transform-style: preserve-3d;
+        margin: 20px;
+    }
+
+</style>
+
+<div class="container">
+
+    <div class="music" name="A">
+        <source src="Joji-YEAHRIGHT.mp3" type="audio/mp3">
+    </div>
+
+    <div class="music" name="B">
+        <source src="Joji-YourMan.mp3" type="audio/mp3">
+    </div>
+
+    <div class="music" name="C">
+        <source src="Joji&BENEE-Afterthought.mp3" type="audio/mp3">
+    </div>
+
+</div>
+
+<div class="destroyer" id="destroyer">
+</div>
+
+
+<div id="controller">
+    <audio autoplay controls id="audio">
+
+    </audio>
+</div>
+
+<script>
+
+    var des = document.getElementById("destroyer");
+
+    des.addEventListener("click"
+        , function () {
+            var controller = document.getElementById("controller");
+            console.log("controller " + controller);
+
+            // 기존 audio 삭제
+            var oldAudio = document.getElementById("audio");
+            console.log(oldAudio);
+            oldAudio.pause();
+            var presource = oldAudio.getElementsByTagName("source");
+            console.log("presource");
+
+            if(0 < presource.length){
+                for(var i = 0; i < presource.length; ++i) {
+                    console.log(presource[i]);
+                    presource[i].removeAttribute("src");
+                    presource[i].removeAttribute("type");
+                    oldAudio.removeChild(presource[i]);
+                }
+            }
+
+        }, false
+    );
+
+    var musics = document.querySelectorAll(".music");
+
+    for(var i = 0; i < musics.length; ++i){
+        musics[i].addEventListener("click"
+            , function (){
+
+                var oldAudio = document.getElementById("audio");
+                console.log(oldAudio);
+                console.log(this);
+
+
+                var sources = this.getElementsByTagName("source");
+
+                for(var i = 0; i < sources.length; ++i){
+                    //
+                    var src = sources[i].getAttribute("src");
+
+                    var newSource = document.createElement("source");
+                    newSource.setAttribute("src", src);
+                    newSource.setAttribute("type", "audio/mp3");
+                    oldAudio.appendChild(newSource);
+                    console.log(src);
+                }
+
+
+            }
+            , false
+        );
+    }
+    //   <source src="Joji-YEAHRIGHT.mp3" type="audio/mp3">
+</script>
+
+</body>
+</html>
+
+

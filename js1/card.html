@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Card</title>
+</head>
+<body>
+
+<style>
+     .container {
+         display: flex;
+         flex-direction: row;
+         justify-content: center;
+         perspective: 1000px;
+         overflow-style: auto;
+         margin: 20px;
+     }
+     .card {
+         width: 200px;
+         height: 300px;
+         background-color: gray;
+         transition-duration: 1s;
+         transform-style: preserve-3d;
+     }
+     .front {
+         background-color: aliceblue;
+         transform: rotateY(180deg);
+     }
+     .back {
+         background-color: lavenderblush;
+     }
+
+     .card > div {
+         width: 200px;
+         height: 300px;
+         position: absolute;
+     }
+     .reverse {
+         transform: rotateY(180deg);
+     }
+
+</style>
+
+<div class="container">
+
+    <div class="card">
+        <div class="front">
+            <hi>FRONT</hi>
+            <hi>9</hi>
+        </div>
+        <div class="back">
+            <hi>BACK</hi>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="front">
+            <hi>FRONT</hi>
+            <hi>8</hi>
+        </div>
+        <div class="back">
+            <hi>BACK</hi>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="front">
+            <hi>FRONT</hi>
+            <hi>7</hi>
+        </div>
+        <div class="back">
+            <hi>BACK</hi>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="front">
+            <hi>FRONT</hi>
+            <hi>6</hi>
+        </div>
+        <div class="back">
+            <hi>BACK</hi>
+        </div>
+    </div>
+
+
+
+<script>
+    var cards = document.querySelectorAll(".card");
+    for(var i = 0; i < cards.length; ++i){
+        cards[i].addEventListener("click"
+            , function (){
+            console.log(this);
+            var classValue = this.getAttribute("class");
+
+            if('card' === classValue){
+                this.setAttribute("class", "card reverse");
+            } else{
+                this.setAttribute("class", "card");
+            }
+
+            }
+            , false
+        );
+    }
+</script>
+
+</body>
+</html>
+
+

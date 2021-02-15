@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    // not a function 에러 발생
+    // doB();
+    // undefined 에러 발생
+    console.log(doB);
+
+    // 이것은 선언문... doB가 변수로 메모리로 올라간다.
+    // 그런데 = 은 연산식... 따라서 이 상황에서 초기화가 되지 않았다. = undefined
+    // 아예 못찾았다 = not defined
+    // 그러나 null과는 다르다. null도 assign 된 것이다.
+    // 따라서 2차 loop(?)에서 식이 실행되고 초기화된다.
+    var doB = function(){
+        console.log("doB function");
+    }
+
+</script>
+
+<script>
+    // not defined 에러 발생
+    doA();
+
+</script>
+
+<script>
+    console.log(doA);
+
+    // 이 선언문이 메모리에 올라감.
+    // 따라서 log에 doA가 잘 뜨고, 실행도 된다.
+    function doA(){
+        console.log("doA function");
+    }
+</script>
+
+<script>
+    // window 컨텍스트에 메모리 할당
+    function doC(){
+        console.log("doC function");
+    }
+</script>
+
+<script>
+    // 이건 된다.
+    // = window.doC(); 와 같다. 전역변수의 개념이다. 전역변수가 많아지면 문제...
+    // 최근 JS가 이 문제를 해결한다.
+    doC();
+</script>
+
+
+
+<h1>AAA</h1>
+
+</body>
+</html>

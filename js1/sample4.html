@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<style>
+    ul{
+        transition-duration: 5s;
+    }
+    .red{
+        background-color: red;
+        transform:translateX(500px);
+    }
+    .blue{
+        font-size: large;
+        font-weight: bold;
+        background-color: blue;
+        transform:translateX(250px);
+    }
+    .green{
+        font-size: large;
+        font-weight: bold;
+        background-color: green;
+    }
+</style>
+
+    <ul class ="red">
+        <li class="red">AAA</li>
+        <li id="target">BBB</li>
+        <li class="blue">CCC</li>
+        <li>DDD</li>
+    </ul>
+
+    <script>
+        var target = document.querySelector("#target");
+        target.setAttribute("class", "green");
+        console.log(document.querySelector("#target"));
+        console.log(document.querySelectorAll(".blue"));
+        //
+        // var ulobjs = document.querySelectorAll("li");
+        // console.dir(ulobjs);
+        //
+        // for(var i = 0; i < ulobjs.length; ++i){
+        //     ulobjs[i].setAttribute("class", "blue");
+        // }
+
+        // ulobj.setAttribute("class", "s1");
+    </script>
+
+</body>
+</html>
