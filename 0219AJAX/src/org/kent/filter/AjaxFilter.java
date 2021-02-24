@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet Filter implementation class AjaxFilter
  */
-@WebFilter(urlPatterns={"/api/list", "/api/add"})
+@WebFilter(urlPatterns={"/api/*"})
 public class AjaxFilter implements Filter {
 
     public AjaxFilter() {
